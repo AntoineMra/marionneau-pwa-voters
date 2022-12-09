@@ -1,12 +1,12 @@
 import Router from '@koa/router'
-import * as TaskControllers from '#components/task/task-controllers.js'
+import * as VoterControllers from '#components/voters/voter-controllers.js'
 
-const tasks = new Router()
+const voters = new Router()
 
-tasks.get('/', TaskControllers.index)
-tasks.get('/:id', TaskControllers.id)
-tasks.post('/', TaskControllers.create)
-tasks.put('/:id', TaskControllers.update)
-tasks.del('/:id', TaskControllers.del)
+voters.get('/', VoterControllers.index)
+voters.get('/:id', VoterControllers.id)
+voters.post('/', VoterControllers.create)
+voters.put('/:id', VoterControllers.update)
+voters.del('/:id', VoterControllers.del)
 
-export default tasks
+export default voters

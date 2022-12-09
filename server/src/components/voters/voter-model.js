@@ -7,17 +7,16 @@ const voterSchema = new Schema({
     type: String,
     required: true
   },
-  description: {
+  purpose: {
     type: String
   },
-  list: {
-    type: Schema.Types.ObjectId,
-    ref: 'List',
+  choices: {
+    type: Array,
     required: true
   },
-  done: {
-    type: Boolean,
-    default: false
+  totalVotes: {
+    type: Number,
+    default: 0
   }
 }, {
   timestamps: true
