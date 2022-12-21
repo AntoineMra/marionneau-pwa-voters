@@ -1,4 +1,4 @@
-import Campaign from '#components/campaign/campagin-model.js'
+import Campaign from '#components/campaign/campaign-model.js'
 import Joi from 'joi'
 
 export async function index (ctx) {

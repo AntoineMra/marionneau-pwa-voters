@@ -22,10 +22,10 @@ export async function id (ctx) {
 
 export async function create (ctx) {
   try {
-    const VoteValidationSchema = Joi.object({ // TODO : Add Data Structure
-      title: Joi.string().required(),
-      purpose: Joi.string(),
-      choices: Joi.array().required(),
+    const VoteValidationSchema = Joi.object({
+      voter: Joi.string().required(),
+      choice: Joi.string().required(),
+      campaign: Joi.string().required(),
     })
     const { error, value } = VoteValidationSchema.validate(ctx.request.body)
     if(error) throw new Error(error)
@@ -38,11 +38,8 @@ export async function create (ctx) {
 
 export async function update (ctx) {
   try {
-    const VoteValidationSchema = Joi.object({ // TODO : Add Data Structure
-      title: Joi.string().required(),
-      purpose: Joi.string(),
-      choices: Joi.array().required(),
-      totalVotes: Joi.number()
+    const VoteValidationSchema = Joi.object({
+      choice: Joi.string().required(),
     })
     const { error, value } = VoteValidationSchema.validate(ctx.request.body)
     if(error) throw new Error(error)

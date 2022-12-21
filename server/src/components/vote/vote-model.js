@@ -3,20 +3,18 @@ import mongoose from "mongoose"
 const { Schema } = mongoose
 
 const voteSchema = new Schema({ // TODO : Add proper Vote Structure
-  title: {
+  voter: {
     type: String,
     required: true
   },
-  purpose: {
-    type: String
-  },
-  choices: {
-    type: Array,
+  choice: {
+    type: String,
     required: true
   },
-  totalVotes: {
-    type: Number,
-    default: 0
+  campaign: {
+    type: Schema.Types.ObjectId,
+    ref: 'Campaign',
+    required: true
   }
 }, {
   timestamps: true
