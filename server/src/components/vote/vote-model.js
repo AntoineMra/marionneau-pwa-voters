@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const { Schema } = mongoose
 
-const voterSchema = new Schema({
+const voteSchema = new Schema({ // TODO : Add proper Vote Structure
   title: {
     type: String,
     required: true
@@ -22,7 +22,7 @@ const voterSchema = new Schema({
   timestamps: true
 })
 
-const Voter = mongoose.model('Voter', voterSchema)
+const Vote = mongoose.model('Vote', voteSchema)
 
-export default Voter
+export default Vote
 
