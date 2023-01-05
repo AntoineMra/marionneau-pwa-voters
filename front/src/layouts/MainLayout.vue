@@ -6,7 +6,6 @@
 
         <q-toolbar-title> Voters App </q-toolbar-title>
 
-        <img class="header-logo" src="../assets/header-logo.svg" alt="" />
       </q-toolbar>
     </q-header>
 
@@ -37,7 +36,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 export default defineComponent({
   name: "MainLayout",
 });

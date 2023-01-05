@@ -13,14 +13,7 @@ const path = require('path')
 
 module.exports = configure(function (/* ctx */) {
   return {
-    eslint: {
-      // fix: true,
-      // include = [],
-      // exclude = [],
-      // rawOptions = {},
-      warnings: true,
-      errors: true
-    },
+
 
     // https://v2.quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
