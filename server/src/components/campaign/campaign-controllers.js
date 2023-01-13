@@ -13,7 +13,7 @@ export async function index (ctx) {
 export async function id (ctx) {
   try {
     if(ctx.params.id.length <= 0) return ctx.notFound({ message: 'Id missing, campaign ressource not found' })
-    const campaign = await Campaign.findById(ctx.params.id).populate('campaign')
+    const campaign = await Campaign.findById(ctx.params.id)
     ctx.ok(campaign)
   } catch (e) {
     ctx.badRequest({ message: e.message })

@@ -13,7 +13,7 @@ export async function index (ctx) {
 export async function id (ctx) {
   try {
     if(ctx.params.id.length <= 0) return ctx.notFound({ message: 'Id missing, vote ressource not found' })
-    const vote = await Vote.findById(ctx.params.id).populate('vote')
+    const vote = await Vote.findById(ctx.params.id)
     ctx.ok(vote)
   } catch (e) {
     ctx.badRequest({ message: e.message })
@@ -23,7 +23,6 @@ export async function id (ctx) {
 export async function create (ctx) {
   try {
     const VoteValidationSchema = Joi.object({
-      voter: Joi.string().required(),
       choice: Joi.string().required(),
       campaign: Joi.string().required(),
     })

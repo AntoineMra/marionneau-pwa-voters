@@ -6,7 +6,7 @@ export const useCampaignStore = defineStore('campaign', {
     return {campaigns: []}
   },
   actions: {
-    addList(campaign) {
+    addCampaign(campaign) {
       api.post("/campaign",campaign).then(res => this.campaigns.push(res.data))
     },
     updateVoteCounter(campaignId) {

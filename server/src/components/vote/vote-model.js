@@ -2,10 +2,9 @@ import mongoose from "mongoose"
 
 const { Schema } = mongoose
 
-const voteSchema = new Schema({ // TODO : Add proper Vote Structure
+const voteSchema = new Schema({ 
   voter: {
     type: String,
-    required: true
   },
   choice: {
     type: String,

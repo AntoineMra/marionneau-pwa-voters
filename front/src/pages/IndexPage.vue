@@ -1,13 +1,14 @@
 <template>
   <q-page class="flex flex-center">
     <h1 class="indexTitle">Bonjour ! 👋</h1>
+    <h2 class="campaign-head">Bienvenue dans les campaigne de vote !</h2>
     <div class="flex flex-center column">
       <div v-if="!campaignLists.length">
         <h2 class="subtitle">Il est temps d'ajouter des campagine de vote</h2>
+        <q-btn color="white" text-color="black" label="Ajouter" :to="'/campaign/add'" />
       </div>
       <div class="flex flex-center list-container" v-else v-for="cl in campaignLists" :key="cl._id">
         <CampaignDetail :campaign="cl" />
-        <h1>{{cl}}</h1>
       </div>
     </div>
   </q-page>
