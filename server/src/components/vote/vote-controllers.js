@@ -26,8 +26,9 @@ export async function create (ctx) {
       choice: Joi.string().required(),
       campaign: Joi.string().required(),
     })
-    const { error, value } = VoteValidationSchema.validate(ctx.request.body)
+    let { error, value } = VoteValidationSchema.validate(ctx.request.body)
     if(error) throw new Error(error)
+    value = {...value, current: 0}
     const vote = await Vote.create(value)
     ctx.ok(vote)
   } catch (e) {
@@ -39,6 +40,7 @@ export async function update (ctx) {
   try {
     const VoteValidationSchema = Joi.object({
       choice: Joi.string().required(),
+      current: Joi.number().required(),
     })
     const { error, value } = VoteValidationSchema.validate(ctx.request.body)
     if(error) throw new Error(error)

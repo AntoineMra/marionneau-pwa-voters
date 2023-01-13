@@ -5,7 +5,7 @@
             <label  for="title">Titre :</label>
             <input type="text" v-model="title" placeholder="Election Délégué" required>
             <label class="input-form" for="purpose">Objectif :</label>
-            <input type="longtext" v-model="purpose" placeholder="Nous avons mis en place..." required>
+            <textarea v-model="purpose" placeholder="Nous avons mis en place..." required> </textarea>
             <form @submit.prevent="choiceSubmit" class="flex flex-center column input-form">
                 <label for="title">Ajouter une possibilité de vote :</label>
                 <input type="text" v-model="choice" placeholder="Théo" required @keyup.enter="choiceSubmit">

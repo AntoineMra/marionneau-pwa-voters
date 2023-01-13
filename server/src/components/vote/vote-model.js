@@ -10,6 +10,10 @@ const voteSchema = new Schema({
     type: String,
     required: true
   },
+  current: {
+    type: Number,
+    required: true
+  },
   campaign: {
     type: Schema.Types.ObjectId,
     ref: 'Campaign',
